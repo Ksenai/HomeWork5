@@ -1,11 +1,11 @@
-//Домашняя работа 5
+//HomeWork 5
 
 #include <iostream>
 using namespace std;
 
 int main()
 {
-	//Задача 5.1
+	//Task 5.1
 	cout << "Task 5.1\n\n";
 	double distance, time, speed;
 	cout << "Enter distance (km): ";
@@ -20,7 +20,7 @@ int main()
 	else
 		cout << "Not in time.\n";
 
-	//Задача 5.2
+	//Task 5.2
 	cout << "\n\nTask 5.2\n\n";
 	int A, B, C, D;
 	cout << "Enter four numbers: ";
@@ -35,7 +35,7 @@ int main()
 				if (D > A && D > B && D > C)
 					cout << "max = " << D;
 
-	//Задача 5.3
+	//Task 5.3
 	cout << "\n\n\nTask 5.3\n\n";
 	double distance_AB, distance_BC, weight_A, weight_B, time_B;
 	cout << "Enter the distance from A to B (km): ";
@@ -48,7 +48,7 @@ int main()
 	cin >> weight_B;
 	cout << "Stop time at B (min): ";
 	cin >> time_B;
-	//находим затраченное время на отрезке А и В
+	
 	double speed_AB = weight_A;
 	if (weight_A >= 15)
 		speed_AB = 1;
@@ -58,7 +58,7 @@ int main()
 			if (weight_A < 8)
 				speed_AB = 3;
 	double time_AB = (distance_AB / speed_AB) * 60;
-	//находим затраченное время на отрезке В и С
+	
 	double speed_BC = weight_A - weight_B;
 	if ((weight_A - weight_B) >= 15)
 		speed_BC = 1;
@@ -68,11 +68,11 @@ int main()
 			if ((weight_A - weight_B) < 8)
 				speed_BC = 3;
 	double time_BC = (distance_BC / speed_BC) * 60;
-	//находим общее затраченное время от А до В и от В до С, плюс остановка на В
+	
 	double time_ABC = time_AB + time_BC + time_B;
-	//перевод в формат ЧЧ:ММ
-	int H = time_ABC / 60; //часы
-	int M = time_ABC - H * 60; // минуты
+	
+	int H = time_ABC / 60;
+	int M = time_ABC - H * 60; 
 	cout << H << ":" << M << "\n";
 
 	return 0;
